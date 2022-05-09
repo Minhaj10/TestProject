@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { fetchData } from './card-actions';
 
 const cartSlice = createSlice({
     name : 'cart',
-    initialState : {isCartAdded: true},
+    initialState : {
+        launchList: fetchData(),
+    },
     reducers:{
         getAllCart(state){
             state.isCartAdded=true;
